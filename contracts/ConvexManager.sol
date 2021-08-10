@@ -115,7 +115,10 @@ contract ConvexManager is Ownable {
 
     function liquidateAll(uint256 slippage) external onlyOwner {
         withdrawCvx(true);
-        swapRewards(slippage);
+
+        if (cvxCrvBalance() > 0) {
+            swapRewards(slippage);
+        }
 
         uint256 amountIn = cvxBalance();
 
