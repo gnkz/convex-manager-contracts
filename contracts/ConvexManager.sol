@@ -177,7 +177,7 @@ contract ConvexManager is Ownable {
         return cvx.balanceOf(address(this));
     }
 
-    function cvxStakedBalance() public view returns (uint256) {
+    function stakedCvxBalance() public view returns (uint256) {
         return cvxRewardPool.balanceOf(address(this));
     }
 
